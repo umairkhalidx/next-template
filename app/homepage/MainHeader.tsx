@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import styles from "./header.module.css";
 import Link from "next/link";
-import AuthModal from "../components/AuthModal";
+import AuthModal from "./loginSignup";
 
 // Placeholder for now, can be expanded if needed
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type

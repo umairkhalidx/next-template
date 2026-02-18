@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { EyeIcon, EyeSlashIcon, XMarkIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import { motion, AnimatePresence } from 'framer-motion';
-import styles from './auth-modal.module.css';
+import styles from './loginSignup.module.css';
 
 interface AuthModalProps {
     isOpen: boolean;
