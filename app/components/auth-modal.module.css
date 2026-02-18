@@ -1,0 +1,545 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.backdrop {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(12px);
+    cursor: pointer;
+}
+
+.modalContainer {
+    position: relative;
+    width: 100%;
+    max-width: 56rem;
+    height: auto;
+    background-color: #f9fafb;
+    border-radius: 1.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+@media (prefers-color-scheme: dark) {
+    .modalContainer {
+        background-color: #1C1C1E;
+    }
+}
+
+@media (min-width: 768px) {
+    .modalContainer {
+        grid-template-columns: repeat(5, 1fr);
+        height: 665px;
+    }
+}
+
+.closeButtonMobile {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .closeButtonMobile {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 10;
+        color: #9ca3af;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 9999px;
+        padding: 0.5rem;
+        transition: background-color 0.2s;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+.leftPanel {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .leftPanel {
+        display: flex;
+        grid-column: span 2 / span 2;
+        background-image: linear-gradient(to bottom right, #059669, #047857);
+        padding: 2.5rem;
+        flex-direction: column;
+        color: white;
+        position: relative;
+        overflow: hidden;
+    }
+}
+
+.circleDeco1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16rem;
+    height: 16rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    transform: translate(-50%, -50%);
+}
+
+.circleDeco2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 24rem;
+    height: 24rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    transform: translate(33%, 33%);
+}
+
+.brandContent {
+    position: relative;
+    z-index: 10;
+    flex: none;
+}
+
+.brandHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.brandIconWrapper {
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.75rem;
+}
+
+.brandTitle {
+    font-size: 1.875rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    margin: 0;
+}
+
+.welcomeTextContainer {
+    position: relative;
+    z-index: 10;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.welcomeTitle {
+    font-size: 1.875rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+}
+
+.welcomeDesc {
+    color: rgba(236, 253, 245, 0.9);
+    font-size: 0.875rem;
+    line-height: 1.625;
+}
+
+.rightPanel {
+    grid-column: span 3 / span 3;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+    .rightPanel {
+        padding: 3rem;
+    }
+}
+
+.formContainer {
+    max-width: 24rem;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.authToggleHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.authTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+}
+
+.authSubtitle {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-top: 0.25rem;
+    margin-bottom: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+    .authTitle {
+        color: white;
+    }
+
+    .authSubtitle {
+        color: #9ca3af;
+    }
+}
+
+.toggleContainer {
+    display: flex;
+    background-color: #f3f4f6;
+    padding: 0.25rem;
+    border-radius: 0.75rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    .toggleContainer {
+        background-color: #1f2937;
+    }
+}
+
+.toggleBtn {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.toggleBtnActive {
+    background-color: white;
+    color: #111827;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.toggleBtnInactive {
+    background-color: transparent;
+    color: #6b7280;
+}
+
+@media (prefers-color-scheme: dark) {
+    .toggleBtnActive {
+        background-color: #374151;
+        color: white;
+    }
+
+    .toggleBtnInactive {
+        color: #9ca3af;
+    }
+
+    .toggleBtnInactive:hover {
+        color: #d1d5db;
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.inputGroup {
+    margin-bottom: 0.375rem;
+}
+
+.label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.375rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    .label {
+        color: #d1d5db;
+    }
+}
+
+.input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    background-color: white;
+    border: 2px solid #f3f4f6;
+    transition: all 0.2s;
+    outline: none;
+    font-weight: 500;
+    color: #111827;
+    box-sizing: border-box;
+}
+
+.input:focus {
+    border-color: #059669;
+    background-color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+    .input {
+        background-color: #1f2937;
+        border-color: transparent;
+        color: white;
+    }
+
+    .input:focus {
+        border-color: #10b981;
+        background-color: #111827;
+    }
+}
+
+.forgotBtn {
+    font-size: 0.75rem;
+    color: #059669;
+    font-weight: 500;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media (prefers-color-scheme: dark) {
+    .forgotBtn {
+        color: #10b981;
+    }
+}
+
+.forgotBtn:hover {
+    text-decoration: underline;
+}
+
+.passwordWrapper {
+    position: relative;
+}
+
+.eyeBtn {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.eyeBtn:hover {
+    color: #4b5563;
+}
+
+@media (prefers-color-scheme: dark) {
+    .eyeBtn:hover {
+        color: #d1d5db;
+    }
+}
+
+.submitBtn {
+    width: 100%;
+    background-color: #059669;
+    color: white;
+    font-weight: 700;
+    padding: 0.875rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.2);
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: none;
+    cursor: pointer;
+}
+
+.submitBtn:hover {
+    background-color: #047857;
+}
+
+.submitBtn:active {
+    transform: scale(0.98);
+}
+
+@media (prefers-color-scheme: dark) {
+    .submitBtn {
+        background-color: #10b981;
+    }
+
+    .submitBtn:hover {
+        background-color: #059669;
+    }
+}
+
+.divider {
+    position: relative;
+    margin: 2rem 0;
+}
+
+.dividerLine {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+}
+
+.line {
+    width: 100%;
+    border-top: 1px solid #e5e7eb;
+}
+
+@media (prefers-color-scheme: dark) {
+    .line {
+        border-color: #374151;
+    }
+}
+
+.dividerText {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    font-size: 0.75rem;
+}
+
+.orText {
+    background-color: #f9fafb;
+    padding: 0 0.5rem;
+    color: #9ca3af;
+    text-transform: uppercase;
+}
+
+@media (prefers-color-scheme: dark) {
+    .orText {
+        background-color: #1C1C1E;
+    }
+}
+
+.socialGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+}
+
+.socialBtn {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.75rem;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+    cursor: pointer;
+    background-color: white;
+}
+
+.socialBtn:hover {
+    transform: scale(1.05);
+}
+
+.socialBtn:active {
+    transform: scale(0.95);
+}
+
+/* Specific Social Button Styles */
+.socialBtnFacebook {
+    background-color: #1877F2;
+    color: white;
+    border-color: transparent;
+}
+
+.socialBtnFacebook:hover {
+    background-color: #166FE5;
+}
+
+.socialBtnLinkedin {
+    background-color: #0077b5;
+    color: white;
+    border-color: transparent;
+}
+
+.socialBtnLinkedin:hover {
+    background-color: #006097;
+}
+
+.socialBtnTwitter {
+    background-color: black;
+    color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+    .socialBtnTwitter {
+        background-color: white;
+        color: black;
+    }
+
+    .socialBtnTwitter:hover {
+        background-color: #f3f4f6;
+    }
+}
+
+.socialBtnTwitter:hover {
+    background-color: #333;
+}
+
+.socialBtnGoogle {
+    background-color: white;
+    color: #1f2937;
+    border: 1px solid #e5e7eb;
+}
+
+.socialBtnGoogle:hover {
+    background-color: #f9fafb;
+}
+
+@media (prefers-color-scheme: dark) {
+    .socialBtnGoogle {
+        background-color: white;
+        /* Keep white for Google usually or adapt */
+        border-color: #374151;
+    }
+}
+
+.closeButtonDesktop {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .closeButtonDesktop {
+        display: block;
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        color: #9ca3af;
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: color 0.2s;
+    }
+
+    .closeButtonDesktop:hover {
+        color: #4b5563;
+    }
+}

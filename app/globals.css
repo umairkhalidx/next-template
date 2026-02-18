@@ -1,9 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  /* Default to Dark Mode Variables */
   --background: #1C1C1E;
-  /* Was #000000 in previous step, but inspiration uses #1C1C1E for bg-main */
   --foreground: #ededed;
 
   --primary-accent: #10b981;
@@ -17,7 +15,6 @@ body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   margin: 0;
 
-  /* Premium aesthetic touches for text */
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }

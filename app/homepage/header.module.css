@@ -1,6 +1,8 @@
 .header {
-    background-color: rgba(var(--bg-header-rgb, 28, 28, 30), 0.85);
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black */
     backdrop-filter: blur(12px);
+    /* backdrop-filter: blur(12px); Removed blur as background is solid */
     padding: 1.25rem 4rem;
     width: 100%;
     display: flex;
@@ -27,7 +29,7 @@
     align-items: center;
     gap: 1rem;
     font-weight: 900;
-    font-size: 1.75rem;
+    font-size: 1.35rem;
     /* Increased from 1.5rem */
     cursor: pointer;
     color: var(--text-header, #ededed);
@@ -38,9 +40,9 @@
 
 .logoIconWrapper {
     background-color: var(--primary-accent, #10b981);
-    width: 56px;
+    width: 52px;
     /* Increased from 44px */
-    height: 56px;
+    height: 52px;
     /* Increased from 44px */
     display: flex;
     align-items: center;
@@ -51,9 +53,9 @@
 }
 
 .logoIcon {
-    width: 36px;
+    width: 32px;
     /* Increased from 26px */
-    height: 36px;
+    height: 32px;
     /* Increased from 26px */
     color: #ffffff;
     fill: currentColor;
@@ -90,7 +92,8 @@
 }
 
 .navLink {
-    font-size: 0.8rem;
+    font-size: 0.65rem;
+    /* Reduced from 0.8rem */
     font-weight: 700;
     color: #9ca3af;
     /* Dark mode default */
@@ -99,7 +102,8 @@
     transition: all 0.2s ease;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    padding: 0.6rem 1.25rem;
+    padding: 0.4rem 0.8rem;
+    /* Reduced from 0.6rem 1.25rem */
     border-radius: 9999px;
     display: inline-block;
 }
