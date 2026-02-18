@@ -1,32 +1,21 @@
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
+  /* Default to Dark Mode Variables */
+  --background: #1C1C1E;
+  /* Was #000000 in previous step, but inspiration uses #1C1C1E for bg-main */
+  --foreground: #ededed;
+
+  --primary-accent: #10b981;
+  --primary-accent-hover: #059669;
+  --bg-footer: #000000;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
-
-  /* Center content for simple homepage visualization */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   margin: 0;
 
   /* Premium aesthetic touches for text */
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-}
-
-/* Ensure h1 looks decent */
-h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: -0.05em;
-  background: linear-gradient(to right, #fff, #aaa);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin: 0;
 }

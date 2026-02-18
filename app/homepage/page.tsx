@@ -1,8 +1,15 @@
+import styles from './homepage.module.css';
+import MainFooter from './MainFooter';
+import MainHeader from './MainHeader';
 
 export default function HomePage() {
     return (
-        <main>
-            <h1>Hello World</h1>
-        </main>
+        <>
+            <MainHeader />
+            <main className={styles.main}>
+                {/* Scrollable area for background transition */}
+            </main>
+            <MainFooter />
+        </>
     );
 }

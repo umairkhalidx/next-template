@@ -1,0 +1,13 @@
+.main {
+    /* Ensure page is tall enough to scroll */
+    min-height: 250vh;
+    width: 100%;
+
+    /* Create the smooth transition from black to white */
+    background: linear-gradient(to bottom, #000000 0%, #000000 30%, #ffffff 100%);
+
+    /* Flexbox for initial centering, but allow scrolling */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
