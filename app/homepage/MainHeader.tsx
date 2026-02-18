@@ -2,6 +2,7 @@
 
 import React from "react";
 import styles from "./header.module.css";
+import Link from "next/link";
 
 // Placeholder for now, can be expanded if needed
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
@@ -14,7 +15,7 @@ export default function MainHeader({ }: HeaderProps) {
         <header className={styles.header} id="header-section">
             <div className={styles.headerLeft}>
                 {/* Logo and Project Name */}
-                <div className={styles.logoContainer}>
+                <Link href="/" className={styles.logoContainer}>
                     <div className={styles.logoIconWrapper}>
                         <svg
                             className={styles.logoIcon}
@@ -32,7 +33,7 @@ export default function MainHeader({ }: HeaderProps) {
                         </svg>
                     </div>
                     <span className={styles.projectName}>NEXTAPP</span>
-                </div>
+                </Link>
             </div>
 
             <div className={styles.headerCenter}>
@@ -46,8 +47,8 @@ export default function MainHeader({ }: HeaderProps) {
             </div>
 
             <div className={styles.headerRight}>
-                <button className={`${styles.btn} ${styles.btnLogin}`}>LOGIN</button>
-                <button className={`${styles.btn} ${styles.btnPrimary} ${styles.btnPop}`}>GET STARTED</button>
+                <Link href="/login" className={`${styles.btn} ${styles.btnLogin}`}>LOGIN</Link>
+                <Link href="/signup" className={`${styles.btn} ${styles.btnPrimary} ${styles.btnPop}`}>GET STARTED</Link>
             </div>
         </header>
     );
